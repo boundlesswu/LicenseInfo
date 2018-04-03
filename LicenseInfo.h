@@ -18,7 +18,7 @@ int WriterLicenseFile(const char *outputFileName,const char *machineInfo, licens
 
 int ReadLicenseFile(const char *outputFileName, char *md5sum,licenseInfo *pl, const char* key);
 
-int UpdateLicenseFile(const char *outputFileName);
+int UpdateLicenseFile(const char *outputFileName,const char* key);
 
 inline void display(licenseInfo* p){
   std::cout<<"starTime:"<<p->starTime<<"   endTime:" << p->endTime<<std::endl;
