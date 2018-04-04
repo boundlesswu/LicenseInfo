@@ -20,6 +20,8 @@ int ReadLicenseFile(const char *outputFileName, char *md5sum,licenseInfo *pl, co
 
 int UpdateLicenseFile(const char *outputFileName,const char* key);
 
+int UpdateLicenseFile(const char *outputFileName);
+
 inline void display(licenseInfo* p){
   std::cout<<"starTime:"<<p->starTime<<"   endTime:" << p->endTime<<std::endl;
   std::cout<<"validTime:"<<p->validTime<<"   loginTime:" << p->loginTime<<std::endl;

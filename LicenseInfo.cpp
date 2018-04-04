@@ -33,3 +33,7 @@ int UpdateLicenseFile(const char *outputFileName,const char* key= nullptr){
   al.loginTime = time(NULL);
   return WriterLicenseFile(outputFileName,md5sum,&al,key);
 }
+
+int UpdateLicenseFile(const char *outputFileName){
+  return UpdateLicenseFile(outputFileName,NULL);
+}

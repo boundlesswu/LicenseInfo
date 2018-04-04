@@ -58,6 +58,7 @@ int main(int argc,char* argv[]){
   licenseInfo lI2;
   ::ReadLicenseFile(licensefile,serviceinfo2,&lI2,NULL);
   cout <<  "md5sum "<< serviceinfo2 << endl;
+  display(&lI);
   display(&lI2);
   return 0;
 
