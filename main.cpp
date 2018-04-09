@@ -24,17 +24,17 @@ int main() {
   info.maxChannelNum =  64;
   info.functionBit = 0x678;
 
-  display(&info);
+  info.display();
   const char md5sum[]="c3d9d2be5a2c083ec7845ae3db8a2ad9";
   const char licenseFileName[]="license.dat";
 
-  ::WriterLicenseFile(licenseFileName,md5sum,&info, NULL);
+  info.WriterLicenseFile(licenseFileName,md5sum, NULL);
   licenseInfo licenseInfo1 ;
   char machineInfo[32+1] = {0};
 
-  ::ReadLicenseFile(licenseFileName, machineInfo,&licenseInfo1, NULL);
+  licenseInfo1.ReadLicenseFile(licenseFileName, machineInfo, NULL);
   std::cout << "ms5sum:" <<machineInfo<<std::endl;
-  display(&licenseInfo1);
+  licenseInfo1.display();
   return 0;
 }
 

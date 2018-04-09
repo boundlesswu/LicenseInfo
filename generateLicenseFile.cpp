@@ -26,6 +26,7 @@ int readsum5file(const char* file, unsigned char* output){
   }
   ifs.close();
   strcpy((char *) output, (char *) strLine.c_str());
+  return 0;
 }
 
 int main(int argc,char* argv[]){
@@ -47,19 +48,19 @@ int main(int argc,char* argv[]){
   lI.loginTime = 0L;
   lI.functionBit = 0L;
   lI.maxCallNum = 0L;
-  char serviceinfo[64]={0};
+  //char serviceinfo[64]={0};
   if(readsum5file(serverInfofile, (unsigned char *) serverInfofile) < 0){
     cout<< "read service info error" <<endl;
     return -1;
   }
-  ::WriterLicenseFile(licensefile,serverInfofile,&lI, NULL);
+  lI.WriterLicenseFile(licensefile,serverInfofile, NULL);
 
   char serviceinfo2[64]={0};
   licenseInfo lI2;
-  ::ReadLicenseFile(licensefile,serviceinfo2,&lI2,NULL);
+  lI2.ReadLicenseFile(licensefile,serviceinfo2,NULL);
   cout <<  "md5sum "<< serviceinfo2 << endl;
-  display(&lI);
-  display(&lI2);
+  lI.display();
+  lI2.display();
   return 0;
 
 
